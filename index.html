@@ -289,7 +289,7 @@
 </header>
 
 <main id="list"></main>
-<footer>Modifications synchronisées avec le Google Sheet partagé<br><span id="appVersion"></span></footer>
+<footer>Modifications synchronisées en temps réel entre tous les appareils<br><span id="appVersion"></span></footer>
 <div class="toast" id="toast"></div>
 
 <div class="sheet-backdrop" id="sheetBackdrop"></div>
@@ -326,7 +326,7 @@
 <div id="printArea"></div>
 
 <script>
-const APP_VERSION = "v1.0 · 8 oct. 2026 · Alleur";
+const APP_VERSION = "v1.1 · 8 oct. 2026 · Alleur";
 const STORAGE_KEY = "stock-alleur-v1";
 const API_URL_KEY = "stock-alleur-apiurl";
 const USER_KEY = "stock-alleur-user";
@@ -1417,7 +1417,7 @@ async function openHistorySheet(){
   document.getElementById("historySheet").classList.add("show");
   const listEl = document.getElementById("historyList");
   if(!apiUrl){
-    listEl.innerHTML = `<div class="sheet-empty">L'historique n'existe qu'en mode synchronisé (configure l'URL dans ⚙️).</div>`;
+    listEl.innerHTML = `<div class="sheet-empty">L'historique n'existe qu'en mode synchronisé (synchronisation requise).</div>`;
     return;
   }
   listEl.innerHTML = `<div class="sheet-empty">Chargement…</div>`;
